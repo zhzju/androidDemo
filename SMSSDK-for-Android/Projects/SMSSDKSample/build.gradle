@@ -1,0 +1,68 @@
+apply plugin: 'com.android.application'
+// 添加插件
+apply plugin: 'com.mob.sdk'
+
+android {
+    compileSdkVersion 28
+    buildToolsVersion rootProject.ext.buildTool
+
+    defaultConfig {
+        applicationId "cn.smssdk.demo"
+        minSdkVersion 16
+        targetSdkVersion 28
+        versionCode rootProject.ext.versionCode
+        versionName rootProject.ext.versionName
+    }
+    sourceSets {
+        main {
+            manifest.srcFile 'AndroidManifest.xml'
+            java.srcDirs = ['src']
+            res.srcDirs = ['res']
+        }
+    }
+
+    signingConfigs{
+        release {
+            storeFile file("demokey.keystore")
+            storePassword "123456"
+            keyAlias "demokey.keystore"
+            keyPassword "123456"
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-project.txt'
+            signingConfig signingConfigs.release
+        }
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-project.txt'
+            signingConfig signingConfigs.release
+        }
+    }
+    lintOptions {
+        disable 'InconsistentArrays','OldTargetApi','GradleOverrides','MissingTranslation','UnusedResources','GoogleAppIndexingWarning'
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_6
+        targetCompatibility JavaVersion.VERSION_1_6
+    }
+}
+
+// 在MobSDK的扩展中注册SMSSDK的相关信息
+MobSDK {
+//    domain 'jp'
+    appKey 'moba6b6c6d6'
+    appSecret 'b89d2427a3bc7ad1aea1e1e8c1d36bf3'
+
+    SMSSDK {
+        // 若使用GUI的自动填充验证码功能，需打开此设置
+//        autoSMS true
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+}

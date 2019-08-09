@@ -1,0 +1,2 @@
+include ':SMSSDKSample'
+project(':SMSSDKSample').projectDir = new File('Projects/SMSSDKSample')

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".drawerActivity"
+    android:orientation="vertical"
+    android:id="@+id/drawer">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <com.qmuiteam.qmui.widget.QMUIAppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <com.qmuiteam.qmui.widget.QMUITopBar
+                android:id="@+id/main_topbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/qmui_topbar_height"
+                android:fitsSystemWindows="true"
+                app:qmui_topbar_bg_color="@color/app_color_blue"
+                app:qmui_topbar_need_separator="false"
+                app:qmui_topbar_title_color="@color/qmui_config_color_white" />
+        </com.qmuiteam.qmui.widget.QMUIAppBarLayout>
+
+        <TextView
+            android:id="@+id/drawer_text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/left"
+        android:layout_width="200dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="left"
+        android:background="@android:color/white">
+         <ListView android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/drawer_listview"
+            android:choiceMode="singleChoice"
+            android:background="@android:color/white" />
+    </RelativeLayout>
+</androidx.drawerlayout.widget.DrawerLayout>

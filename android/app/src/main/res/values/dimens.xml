@@ -1,0 +1,7 @@
+<resources>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="grab_pixel">1dp</dimen>
+    <dimen name="allTextSizeSP">15sp</dimen>
+    <dimen name="btn_height">40dp</dimen>
+    <dimen name="edit_text_height">60dp</dimen>
+</resources>

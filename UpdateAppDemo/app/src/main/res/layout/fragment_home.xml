@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.lql.updateappdemo.ui.MainActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="这里是一个fragment"
+        android:textSize="20dp" />
+
+    <Button
+        android:id="@+id/fragment_checkVersion_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="检查更新(Fragment)" />
+
+</LinearLayout>
